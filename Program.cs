@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using StudentskaWebAPI.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,6 +18,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//Registracija ApplicationDbContext
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 app.UseHttpsRedirection();
 
