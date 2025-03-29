@@ -30,25 +30,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-
-
-partial class Program
-{
-    static void Main()
-    {
-        string connectionString = "Server=DESKTOP-JGAQ95Q\\SQLEXPRESS;Database=StudentskaWebAPI;Trusted_Connection=True;TrustServerCertificate=True";
-        using (SqlConnection connection = new SqlConnection(connectionString))
-        {
-            try
-            {
-                connection.Open();
-                Console.WriteLine("Connection successful!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Connection failed: " + ex.Message);
-            }
-        }
-    }
-}
