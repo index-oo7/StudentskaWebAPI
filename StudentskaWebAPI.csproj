@@ -27,8 +27,5 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.0.0" />
-  </ItemGroup>    
-  <ItemGroup>
-    <Folder Include="Models\" />
   </ItemGroup>
 </Project>
