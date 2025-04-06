@@ -5,6 +5,8 @@ using StudentskaWebAPI.Models;
 
 namespace StudentskaWebAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ZapisniksController : Controller
     {
         private StudentskaWebApiContext _context;

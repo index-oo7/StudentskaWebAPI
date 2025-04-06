@@ -6,6 +6,8 @@ using StudentskaWebAPI.Models;
 
 namespace StudentskaWebAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class StudentsController : Controller
     {
         private readonly StudentskaWebApiContext _context;
