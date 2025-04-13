@@ -1,4 +1,4 @@
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using StudentskaWebAPI.Data;
 
@@ -10,15 +10,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-//Registracija ApplicationDbContext
-//builder
-//    .Services
-//    .AddDbContext<ApplicationDbContext>(options => 
-//    options.UseSqlServer(
-//        builder
-//        .Configuration
-//        .GetConnectionString("DefaultConnection")));
 
 //Registracija StudentskaWebApiContext
 builder
@@ -37,6 +28,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// CORS za sve origin-e, u produkcji zameniti sa specificnim domenima
+//.WithOrigins("domen1", "domen2")
+app.UseCors(builder => builder
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
 
 app.UseHttpsRedirection();
 
